@@ -1,7 +1,5 @@
 package ChatRework.Main;
 
-import ChatRework.View.LogInView;
-
 /**
  * @author Felix Mann
  * @version 1.0
@@ -11,6 +9,5 @@ import ChatRework.View.LogInView;
 public class Chat {
     public static void main(String[] args) {
         System.out.println("Hello World");
-        LogInView logInView = new LogInView();
     }
 }
