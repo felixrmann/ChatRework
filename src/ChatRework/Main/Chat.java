@@ -1,5 +1,7 @@
 package ChatRework.Main;
 
+import java.net.Socket;
+
 /**
  * @author Felix Mann
  * @version 1.0
@@ -8,6 +10,23 @@ package ChatRework.Main;
 
 public class Chat {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+
+    }
+
+    private boolean isPortInUse(String hostName, int portNumber) {
+        boolean result;
+
+        try {
+
+            Socket s = new Socket(hostName, portNumber);
+            s.close();
+            result = true;
+
+        }
+        catch(Exception e) {
+            result = false;
+        }
+
+        return(result);
     }
 }
