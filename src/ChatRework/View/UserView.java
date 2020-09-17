@@ -1,5 +1,7 @@
 package ChatRework.View;
 
+import ChatRework.Model.User;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,17 +11,22 @@ import java.awt.*;
  * @since 2020-September-16
  */
 
-public class UserView extends JFrame {
-    private static String[] testarray = {"1", "2", "3", "4", "test"};
+public class UserView extends JPanel {
 
-    private static JPanel mainPanel, chatRoomSelectPanel, gameSelectPanel, chatPanel, bottomPanel, leftsidePanel;
-    private static JTextArea chatBoxArea;
-    private static JTextField inputBarText;
-    private static JButton ticTacToeGameButton, rockPaperScissorsGameButton, tschauSeppGameButton, sendButton;
-    private static JList<String> serverSelectList;
-    private static JScrollPane scrollpane;
+    private MainFrame mainFrame;
+    private User user;
+    private String[] testarray = {"1", "2", "3", "4", "test"};
+    private JPanel mainPanel, chatRoomSelectPanel, gameSelectPanel, chatPanel, bottomPanel, leftsidePanel;
+    private JTextArea chatBoxArea;
+    private JTextField inputBarText;
+    private JButton ticTacToeGameButton, rockPaperScissorsGameButton, tschauSeppGameButton, sendButton;
+    private JList<String> serverSelectList;
+    private JScrollPane scrollpane;
 
-    public UserView(Color color, String name) {
+    public UserView(User user, MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
+        this.user = user;
+
         mainPanel = new JPanel();
         chatRoomSelectPanel = new JPanel();
         gameSelectPanel = new JPanel();
@@ -38,16 +45,10 @@ public class UserView extends JFrame {
 
 
         init();
-        pack();
-        setSize(530, 360);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setVisible(true);
-
     }
 
     private void init() {
-        getContentPane().add(mainPanel);
+        add(mainPanel);
         mainPanel.setLayout(new BorderLayout());
         mainPanel.add(leftsidePanel, BorderLayout.WEST);
 
