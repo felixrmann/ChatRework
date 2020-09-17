@@ -1,6 +1,9 @@
 package ChatRework.Main;
 
 import ChatRework.View.LogInView;
+import ChatRework.View.UserView;
+
+import java.awt.*;
 
 /**
  * @author Felix Mann
@@ -11,6 +14,7 @@ import ChatRework.View.LogInView;
 public class Chat {
     public static void main(String[] args) {
         System.out.println("Hello World");
-        LogInView logInView = new LogInView();
+        //LogInView logInView = new LogInView();
+        new UserView(Color.black, "Gergö");
     }
 }
