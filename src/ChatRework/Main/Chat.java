@@ -1,10 +1,5 @@
 package ChatRework.Main;
 
-import ChatRework.View.LogInView;
-import ChatRework.View.UserView;
-
-import java.awt.*;
-
 /**
  * @author Felix Mann
  * @version 1.0
@@ -16,5 +11,22 @@ public class Chat {
         System.out.println("Hello World");
         //LogInView logInView = new LogInView();
         new UserView(Color.black, "Gergö");
+    }
+
+    private boolean isPortInUse(String hostName, int portNumber) {
+        boolean result;
+
+        try {
+
+            Socket s = new Socket(hostName, portNumber);
+            s.close();
+            result = true;
+
+        }
+        catch(Exception e) {
+            result = false;
+        }
+
+        return(result);
     }
 }
