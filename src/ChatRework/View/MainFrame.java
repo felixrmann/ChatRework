@@ -1,6 +1,7 @@
 package ChatRework.View;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * The type Main frame.
@@ -44,5 +45,13 @@ public class MainFrame extends JFrame {
     public void setFrameSize(int width, int heigth){
         setSize(width, heigth);
         setLocationRelativeTo(null);
+    }
+
+    /**
+     * @return ContentPane
+     */
+    @Override
+    public Container getContentPane() {
+        return getContentPane();
     }
 }

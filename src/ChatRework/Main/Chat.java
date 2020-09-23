@@ -1,10 +1,12 @@
 package ChatRework.Main;
 
+import ChatRework.Client.Client;
 import ChatRework.View.LogInView;
 import ChatRework.View.MainFrame;
 import ChatRework.View.UserView;
 
 import java.awt.*;
+import java.io.IOException;
 import java.net.Socket;
 
 /**
@@ -15,8 +17,11 @@ import java.net.Socket;
 
 public class Chat {
     public static void main(String[] args) {
-        MainFrame mainFrame = new MainFrame();
-        mainFrame.setContent(new LogInView(mainFrame));
+        try {
+            new Client();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private boolean isPortInUse(String hostName, int portNumber) {
